@@ -9,18 +9,29 @@ local launch_menu = {}
 
 -- For example, changing the color scheme:
 config.color_scheme = 'rose-pine'
-config.font = wezterm.font 'JetBrainsMono Nerd Font'
+-- https://www.nerdfonts.com/font-downloads
+config.font = wezterm.font 'Hack Nerd Font Mono'
+config.font_size = 14.0
 config.window_background_opacity = 0.9
 
--- powershell as default program
-config.default_prog = { 'powershell.exe', '-NoLogo' }
+
 
 -- check if the environment is win32 or win64
 if os.getenv('win32') or os.getenv('win64') then
+    -- powershell as default program
+    config.default_prog = { 'powershell.exe', '-NoLogo' }
     -- if it is, add the 64-bit version of powershell to the launch menu
     table.insert(launch_menu, {
         label = 'PowerShell',
         args = { 'powershell.exe', '-NoLogo' },
+    })
+end
+
+if os.getenv('macunix') then
+    cofig.defualt_prog = {'zsh'}
+    table.insert(launch_menu, {
+        label = 'zsh',
+        args = { 'zsh' },
     })
 end
 
@@ -32,11 +43,6 @@ config.window_padding = {
     top = 0,
     bottom = 0,
 }
-
--- The filled in variant of the < symbol
-local SOLID_LEFT_ARROW = wezterm.nerdfonts.pl_right_hard_divider
--- The filled in variant of the > symbol
-local SOLID_RIGHT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
 
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false

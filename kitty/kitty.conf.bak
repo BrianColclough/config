@@ -1,0 +1,21 @@
+font_family      VictorMono Nerd Font
+font_size 16.0
+
+window_padding 6.0
+
+enabled_layouts tall:bias=70;full_size=1;mirrored=false, stack
+
+map ctrl+[ layout_action decrease_num_full_size_windows
+map ctrl+] layout_action increase_num_full_size_windows
+map ctrl+/ layout_action mirror toggle
+map ctrl+y layout_action mirror true
+map ctrl+n layout_action mirror false
+map ctrl+. layout_action bias 50 62 70 80
+map ctrl+, layout_action bias 70
+map ctrl+r layout_action fo 
+
+
+# BEGIN_KITTY_THEME
+# Nightfox
+include current-theme.conf
+# END_KITTY_THEME
