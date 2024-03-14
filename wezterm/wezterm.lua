@@ -10,8 +10,8 @@ local launch_menu = {}
 -- For example, changing the color scheme:
 config.color_scheme = 'rose-pine'
 -- https://www.nerdfonts.com/font-downloads
-config.font = wezterm.font 'Hack Nerd Font Mono'
-config.font_size = 14.0
+config.font = wezterm.font '0xProto Nerd Font Mono'
+config.font_size = 15.0
 config.window_background_opacity = 0.9
 
 
